@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Cup {
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+
+        int n = Integer.parseInt(console.nextLine());
+        int pictureLength = 5 * n;
+        //top half:
+        int topHalfHeight = n + 1;
+        for (int row = 0; row < topHalfHeight; row++) {
+            System.out.print(createStr(n + row, "."));
+            System.out.print("#");
+            int middle = pictureLength - 2 - (2 * (n + row));
+            if (row < n / 2) {
+                System.out.print(createStr(middle, "#"));
+            } else {
+                System.out.print(createStr(middle, "."));
+            }
+            System.out.print("#");
+            System.out.println(createStr(n + row, "."));
+        }
+        //middle part:
+        System.out.print(createStr((pictureLength - n) / 2, "."));
+        System.out.print(createStr(n, "#"));
+        System.out.println(createStr((pictureLength - n) / 2, "."));
+        //bottom half:
+        int numberOfHashtags = n + 4;
+        int numberOfDots = (pictureLength - numberOfHashtags) / 2;
+        int bottomHalfHeight = n + 2;
+        int danceRow = n / 2 + 1;
+
+        for (int row = 1; row <= bottomHalfHeight; row++) {
+            System.out.print(createStr(numberOfDots, "."));
+            if (row != danceRow) {
+                System.out.print(createStr(numberOfHashtags, "#"));
+            } else {
+                System.out.print(createStr((numberOfHashtags - 10) / 2, "."));
+                System.out.print("D^A^N^C^E^");
+                System.out.print(createStr((numberOfHashtags - 10) / 2, "."));
+            }
+            System.out.println(createStr(numberOfDots, "."));
+        }
+
+        //main ends here
+    }
+
+    static String createStr(int count, String character) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            sb.append(character);
+        }
+        return sb.toString();
+    }
+
+}
