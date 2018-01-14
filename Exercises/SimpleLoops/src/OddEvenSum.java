@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Practise {
+public class OddEvenSum {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
 
