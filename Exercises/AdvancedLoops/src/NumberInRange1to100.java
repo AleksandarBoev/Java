@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SimpleExercises {
+public class NumberInRange1to100 {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
 
