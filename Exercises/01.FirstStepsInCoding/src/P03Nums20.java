@@ -1,4 +1,4 @@
-package com.company;
+
 
 public class P03Nums20 {
     public static void main(String[] args) {
